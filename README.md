@@ -5,7 +5,7 @@
 
 > Creating a mobile version skeleton from Figma template
 
-![screenshot](./Assets/Images/Screenshots/preview1.png)
+![screenshot](Assets/Images/Screenshots/preview1.png)
 
 First project from Figma template
 
