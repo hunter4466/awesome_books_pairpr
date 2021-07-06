@@ -69,7 +69,7 @@ function NewNode(title, author, nextNode = null) {
   this.nextNode = nextNode;
 }
 
-class BooksList {
+class BooksListCl {
   add(title, author) {
     if (this.head) {
       const newObj = new NewNode(title, author);
@@ -105,7 +105,7 @@ class BooksList {
   }
 }
 
-const booksObj = new BooksList();
+const booksObj = new BooksListCl();
 
 if (localStorage.getItem('booksList')) {
   const headLess = JSON.parse(localStorage.getItem('booksList'));
