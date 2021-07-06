@@ -179,8 +179,8 @@ formObjButton.addEventListener('click', (event) => {
     removerVar.remove();
   }
   buildHtml();
-  formObjTitle.value = ""
-  formObjAuthor.value = ""
+  formObjTitle.value = '';
+  formObjAuthor.value = '';
 });
 
 buildHtml();
