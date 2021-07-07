@@ -3,7 +3,7 @@
 
 # awesome_books_pairpr
 
-> Creating a mobile version skeleton from Figma template
+> Creating an Awesome Books Page
 
 ![screenshot](./Assets/Images/Screenshots/preview1.png)
 
@@ -12,11 +12,15 @@ First project from Figma template
 
 ## Built With
 
-- Html, Javascrip
+- Html, Javascript
 - Developed in VSCode
 
 
 To get a local copy up and running follow these simple example steps.
+Run:
+- `git clone https://github.com/hunter4466/awesome_books_pairpr.git`
+- `cd awesome_books_pairpr`
+- Open index.html in browser
 
 
 ## Authors
@@ -24,21 +28,21 @@ To get a local copy up and running follow these simple example steps.
 👤 **Author**
 
 - Mario Chois: [@githubhandle](https://github.com/hunter4466)
--Francis Uloko: [GitHub](https://github.com/francisuloko)
--Shabbir Yamani: [GitHub](https://github.com/smy5152)
+- Francis Uloko: [GitHub](https://github.com/francisuloko)
+- Shabbir Yamani: [GitHub](https://github.com/smy5152)
 
 
 ## 🤝 Contributing
 
 
 - Mario Chois: [@githubhandle](https://github.com/hunter4466)
--Francis Uloko [GitHub](https://github.com/francisuloko)
--Shabbir Yamani [GitHub](https://github.com/smy5152)
+- Francis Uloko [GitHub](https://github.com/francisuloko)
+- Shabbir Yamani [GitHub](https://github.com/smy5152)
 
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/hunter4466/awesome_books_pairpr/issues).
 
 ## Show your support
 
