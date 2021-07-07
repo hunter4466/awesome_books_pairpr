@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./Assets/Styles/main.css">
     <title>Awesome Books</title>
 </head>
-
 <body>
-    <header class="header">
-        <h3>Awesome Books</h3>
-        <a href="#book_title">Add</a>
-    </header>
+    <nav class="header">
+        <h3 class="nav_title">Awesome Books</h3>
+        <a class="add_link" href="#book_title">Add</a>
+    </nav>
     <section id="books_list" class="books_list">
-        <h2>All Awesome Books</h2>
-
+        <h2 class="main_title">All Awesome Books</h2>
     </section>
-    <hr>
-    <form>
-        <h3>Add a new book</h3>
+    <hr class="line_separator">
+    <form class="books_form">
+        <h3 class="form_title">Add a new book</h3>
         <input class="book_title" id="book_title" type="text" placeholder="Title">
         <input class="book_author" id="book_author" type="text" placeholder="Author">
         <button class="add_button" id="add_button" type="button">Add</button>
