@@ -1,0 +1,79 @@
+
+* {
+    border: 0px solid red;
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(36, 128, 248);
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+form,
+.books_list h2,
+.main_grid_book {
+    width: 50%;
+    margin: 10px auto;
+    padding: 0;
+}
+
+.grid_book:nth-child(odd) {
+    background: #eee;
+}
+
+.grid_book {
+    padding: 15px;
+    margin: 0;
+    border: 1px solid #eee;
+}
+
+.grid_book_title::after {
+    content: '  by  ';
+}
+
+.grid_remove_btn {
+    float: right;
+    clear: both;
+    padding: 5px;
+    margin: -5px 0 0 0;
+    color: rgb(36, 128, 248);
+    background-color: transparent;
+}
+
+form {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.book_title,
+.book_author,
+.add_button {
+    width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add_button {
+    background-color: rgb(36, 128, 248);
+    color: #fff;
+    font-size: 17px;
+}
+
+hr {
+    border: 1px solid #eee;
+    margin: 40px auto;
+    width: 300px;
+}
+
