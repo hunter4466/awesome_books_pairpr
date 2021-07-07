@@ -103,18 +103,18 @@ class BooksListCl {
       onHold1.nextNode = onHold2;
     }
   }
-  count(){
-    if(this.head){
-      let objectsArr = this.head
-      let count = 0
-      while(objectsArr.nextNode){
-        count += 1
-        objectsArr = objectsArr.nextNode
+
+  count() {
+    if (this.head) {
+      let objectsArr = this.head;
+      let count = 0;
+      while (objectsArr.nextNode) {
+        count += 1;
+        objectsArr = objectsArr.nextNode;
       }
-      return count-1
-    }else{
-      return 0
+      return count - 1;
     }
+    return 0;
   }
 }
 
@@ -156,30 +156,27 @@ function buildHtml(addActive) {
       const titleObj2 = create('span');
       const authorObj2 = create('span');
       const removeBtn2 = create('button');
-      
+
       const innerCount = count;
-    if(addActive){
-      if (innerCount == booksObj.count()+1) {
-        constArray.push([mainBookContainer, liObj2, 'grid_book_last', null, `book${count + 1}`]);
-        constArray.push([liObj2, titleObj2, 'grid_book_title_last', tempObj.nextNode.title]);
-      constArray.push([liObj2, authorObj2, 'grid_book_author_last', tempObj.nextNode.author]);
-      constArray.push([liObj2, removeBtn2, 'grid_remove_btn_last', 'Remove', `remove_${count}`]);
-      }else{
+      if (addActive) {
+        if (innerCount === booksObj.count() + 1) {
+          constArray.push([mainBookContainer, liObj2, 'grid_book_last', null, `book${count + 1}`]);
+          constArray.push([liObj2, titleObj2, 'grid_book_title_last', tempObj.nextNode.title]);
+          constArray.push([liObj2, authorObj2, 'grid_book_author_last', tempObj.nextNode.author]);
+          constArray.push([liObj2, removeBtn2, 'grid_remove_btn_last', 'Remove', `remove_${count}`]);
+        } else {
+          constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
+          constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
+          constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
+          constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
+        }
+      } else {
         constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
         constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
-      constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
-      constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
+        constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
+        constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
       }
-    }
-    else{
-      constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
-      constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
-      constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
-      constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
-    }
-     
-      
-     console.log(booksObj.count())
+
       removeBtn2.addEventListener('click', (event) => {
         event.preventDefault();
         liObj2.remove();
@@ -198,21 +195,21 @@ function buildHtml(addActive) {
 
 formObjButton.addEventListener('click', (event) => {
   event.preventDefault();
-if(formObjTitle.value !="" && formObjAuthor.value !=""){
-  const nbTitle = formObjTitle.value;
-  const nbAuthor = formObjAuthor.value;
-  booksObj.add(nbTitle, nbAuthor);
-  if (storageAvailable('localStorage')) {
-    localStorage.setItem('booksList', JSON.stringify(booksObj));
+  if (formObjTitle.value !== '' && formObjAuthor.value !== '') {
+    const nbTitle = formObjTitle.value;
+    const nbAuthor = formObjAuthor.value;
+    booksObj.add(nbTitle, nbAuthor);
+    if (storageAvailable('localStorage')) {
+      localStorage.setItem('booksList', JSON.stringify(booksObj));
+    }
+    if (document.getElementById('main_grid_book')) {
+      const removerVar = document.getElementById('main_grid_book');
+      removerVar.remove();
+    }
+    buildHtml(true);
+    formObjTitle.value = '';
+    formObjAuthor.value = '';
   }
-  if (document.getElementById('main_grid_book')) {
-    const removerVar = document.getElementById('main_grid_book');
-    removerVar.remove();
-  }
-  buildHtml(true);
-  formObjTitle.value = '';
-  formObjAuthor.value = '';
-}
 });
 
 buildHtml(false);
