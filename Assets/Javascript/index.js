@@ -220,19 +220,15 @@ formObjButton.addEventListener('click', (event) => {
 });
 
 buildHtml(false);
-
+onLoadMain = true
 console.log(navigationArray)
 for(let i = 0;i<navigationArray[0].length;i += 1){
   navigationArray[0][i].addEventListener('click',(event)=>{
     event.preventDefault();
-    console.log('this repeats0')
     for(let x = 0;x <navigationArray[1].length; x += 1){
-      console.log('this repeats1')
       if(i == x){
-        console.log('this repeats2')
         navigationArray[1][x].style = "animation-name: section_show_anim; animation-duration: 0.7s; display: inline;"
       }else{
-        console.log('this repeats3')
         navigationArray[1][x].style = "animation-name: section_close_anim; animation-duration: 0.7s; left: -100vw; display: inline;"
       }
     }
