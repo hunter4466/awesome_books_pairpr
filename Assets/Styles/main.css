@@ -145,16 +145,45 @@ body{
   color: rgb(24, 24, 63);
 }
 /* --------------- section handlers ----------------- */
-
-.books_section{
-
+.sec_1{
+    position:absolute;
+    width:100%;
+    left: 0vw;
 }
-.add_section{
-  
+.sec_2{
+    display: none;
+    position:absolute;
+    width:100%;
+    left: 0vw;
 }
-.contact_section{
-  
+.sec_3{
+    display: none;
+    position:absolute;
+    width:100%;
+    left: 0vw;
 }
+@keyframes section_show_anim{
+ 0%{
+    left: -150vw;
+ }
+ 50%{
+    left: -150vw;
+ }
+ 100%{
+    left: 0vw;
+ }
+}
+@keyframes section_close_anim{
+    0%{
+       left: 0vw;
+    }
+    50%{
+        left: -150vw;
+    }
+    100%{
+        left: -150vw;
+    }
+   }
 /* ----------------- books section ---------------------- */
 .main_title {
   color: rgb(105, 105, 105);
