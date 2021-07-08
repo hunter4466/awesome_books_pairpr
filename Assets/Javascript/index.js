@@ -3,6 +3,7 @@ const formObjAuthor = document.getElementById('book_author');
 const formObjButton = document.getElementById('add_button');
 const booksListUl = document.getElementById('books_list')
 const navigationArray = [[],[]];
+const notice = document.getElementById('notice');
 navigationArray[0].push(document.getElementById('link1'))
 navigationArray[0].push(document.getElementById('link2'))
 navigationArray[0].push(document.getElementById('link3'))
@@ -213,17 +214,23 @@ formObjButton.addEventListener('click', (event) => {
       const removerVar = document.getElementById('main_grid_book');
       removerVar.remove();
     }
+    notice.innerHTML = "Added a new book"
+    notice.style = 'color: green;'
+    timer(notice);
     buildHtml(true);
     formObjTitle.value = '';
     formObjAuthor.value = '';
   } else {
-    let notice = document.getElementById('notice');
-    notice.innerHTML = "Fields cannot be blank";
-    setTimeout(()=> {
-     notice.innerHTML = ''
-    }, 2000)
+    notice.innerHTML = "Field(s) cannot be blank";
+    timer(notice)
   }
 });
+
+function timer(notice){
+  setTimeout(()=> {
+    notice.innerHTML = ''
+   }, 2000);
+}
 
 buildHtml(false);
 onLoadMain = true

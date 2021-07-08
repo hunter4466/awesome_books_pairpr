@@ -370,3 +370,12 @@ body{
   font-family: "Lato1", serif ;
   padding: 10px;
 }
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  padding: 20px 10px;
+  color: #333;
+}
