@@ -199,6 +199,7 @@ body{
   font-size: 15px;
 }
 
+.contact-info,
 .books_form,
 .main_grid_book {
   width: 50%;
@@ -352,3 +353,18 @@ body{
   width: 2px;
 }
 /* ----------------- books section ---------------------- */
+
+.contact-info {
+  text-align: center;
+}
+
+.channels li {
+  margin: 10px 0;
+}
+
+#notice {
+  color: red;
+  font-size: 13px;
+  font-family: "Lato1", serif ;
+  padding: 10px;
+}

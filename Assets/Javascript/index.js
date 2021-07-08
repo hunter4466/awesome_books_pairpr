@@ -216,6 +216,12 @@ formObjButton.addEventListener('click', (event) => {
     buildHtml(true);
     formObjTitle.value = '';
     formObjAuthor.value = '';
+  } else {
+    let notice = document.getElementById('notice');
+    notice.innerHTML = "Fields cannot be blank";
+    setTimeout(()=> {
+     notice.innerHTML = ''
+    }, 2000)
   }
 });
 
