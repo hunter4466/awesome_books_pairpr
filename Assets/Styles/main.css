@@ -1,0 +1,303 @@
+/* ----------------- fuentes -------------------- */
+@font-face {
+  font-family: 'Cocogoose1';
+  src: url('../fonts/Cocogoose_Pro_Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose2';
+  src: url('../fonts/Cocogoose_Pro_Light_Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose3';
+  src: url('../fonts/Cocogoose_Pro_Light-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose4';
+  src: url('../fonts/Cocogoose_Pro_Semilight_Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose5';
+  src: url('../fonts/Cocogoose_Pro_Semilight-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose6';
+  src: url('../fonts/Cocogoose_Pro_Thin_Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose7';
+  src: url('../fonts/Cocogoose_Pro_Thin-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose8';
+  src: url('../fonts/Cocogoose_Pro_UltraLight_Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose9';
+  src: url('../fonts/Cocogoose_Pro_Ultralight-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Cocogoose10';
+  src: url('../fonts/Cocogoose_Pro-trial.ttf');
+}
+
+@font-face {
+  font-family: 'Lato1';
+  src: url('../fonts/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Lato2';
+  src: url('../fonts/Lato-BlackItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato3';
+  src: url('../fonts/Lato-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Lato4';
+  src: url('../fonts/Lato-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato5';
+  src: url('../fonts/Lato-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato6';
+  src: url('../fonts/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Lato7';
+  src: url('../fonts/Lato-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lato8';
+  src: url('../fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato9';
+  src: url('../fonts/Lato-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Lato10';
+  src: url('../fonts/Lato-ThinItalic.ttf');
+}
+
+* {
+  border: 0 solid red;
+  list-style-type: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+/* ----------------- navigation bar ---------------------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(36, 128, 248);
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.nav_title {
+  font-family: "Cocogoose3", serif;
+  font-size: 20px;
+}
+
+.add_link {
+  font-family: "Lato1", serif;
+  font-size: 15px;
+  user-select: none;
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.add_link:hover {
+  color: rgb(24, 24, 63);
+}
+
+/* ----------------- books section ---------------------- */
+.main_title {
+  color: rgb(105, 105, 105);
+  font-family: "Cocogoose3", serif;
+  font-size: 25px;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.form_title {
+  color: rgb(105, 105, 105);
+  font-family: "Cocogoose3", serif;
+  font-size: 15px;
+}
+
+.books_form,
+.main_grid_book {
+  width: 50%;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.grid_book {
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #eee;
+  height: 54px;
+}
+
+.grid_book:nth-child(odd) {
+  background: #eee;
+}
+
+.grid_book_last {
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #eee;
+  animation-duration: 0.5s;
+  animation-name: add_item_anim;
+  overflow: hidden;
+}
+
+.grid_book_last:nth-child(odd) {
+  background: #eee;
+}
+
+@keyframes add_item_anim {
+  0% {
+    height: 0;
+    font-size: 0;
+  }
+
+  100% {
+    height: 54px;
+    font-size: 15px;
+  }
+}
+
+.grid_book_title::after {
+  content: '  by  ';
+}
+
+.grid_book_title_last::after {
+  content: '  by  ';
+}
+
+.grid_remove_btn {
+  font-family: "Lato1", serif;
+  font-size: 15px;
+  float: right;
+  clear: both;
+  padding: 5px;
+  margin: -5px 0 0 0;
+  color: rgb(36, 128, 248);
+  background-color: transparent;
+  transition: ease-in-out 0.2s;
+}
+
+.grid_remove_btn:hover {
+  transform: scale(1.2);
+  color: rgb(34, 34, 90);
+}
+
+.grid_remove_btn_last {
+  font-family: "Lato1", serif;
+  font-size: 15px;
+  float: right;
+  clear: both;
+  padding: 5px;
+  margin: -5px 0 0 0;
+  color: rgb(36, 128, 248);
+  background-color: transparent;
+  transition: ease-in-out 0.2s;
+  animation-duration: 0.5s;
+  animation-name: add_item_anim;
+}
+
+.grid_remove_btn_last:hover {
+  transform: scale(1.2);
+  color: rgb(34, 34, 90);
+}
+
+.grid_book_title {
+  font-family: "Lato7", serif;
+  font-size: 15px;
+}
+
+.grid_book_title_last {
+  font-family: "Lato7", serif;
+  font-size: 15px;
+  animation-duration: 0.5s;
+  animation-name: add_item_anim;
+}
+
+.grid_book_author {
+  font-family: "Lato7", serif;
+  font-size: 15px;
+}
+
+.grid_book_author_last {
+  font-family: "Lato7", serif;
+  font-size: 15px;
+  animation-duration: 0.5s;
+  animation-name: add_item_anim;
+}
+
+.books_form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.book_title,
+.book_author,
+.add_button {
+  width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add_button {
+  font-family: "Lato1", serif;
+  background-color: rgb(36, 128, 248);
+  color: #fff;
+  font-size: 17px;
+  transition: ease-in-out 0.15s;
+}
+
+.add_button:hover {
+  background-color: #fff;
+  color: rgb(36, 128, 248);
+  font-size: 20px;
+}
+
+.line_separator {
+  border: 1px solid #eee;
+  margin: 40px auto;
+  width: 300px;
+}

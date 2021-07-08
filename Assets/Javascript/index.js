@@ -103,6 +103,19 @@ class BooksListCl {
       onHold1.nextNode = onHold2;
     }
   }
+
+  count() {
+    if (this.head) {
+      let objectsArr = this.head;
+      let count = 0;
+      while (objectsArr.nextNode) {
+        count += 1;
+        objectsArr = objectsArr.nextNode;
+      }
+      return count - 1;
+    }
+    return 0;
+  }
 }
 
 const booksObj = new BooksListCl();
@@ -112,7 +125,7 @@ if (localStorage.getItem('booksList')) {
   booksObj.head = headLess.head;
 }
 
-function buildHtml() {
+function buildHtml(addActive) {
   const constArray = [];
   const mainBookContainer = create('ul');
   constArray.push([booksListUl, mainBookContainer, 'main_grid_book', null, 'main_grid_book']);
@@ -143,11 +156,26 @@ function buildHtml() {
       const titleObj2 = create('span');
       const authorObj2 = create('span');
       const removeBtn2 = create('button');
-      constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
-      constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
-      constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
-      constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
+
       const innerCount = count;
+      if (addActive) {
+        if (innerCount === booksObj.count() + 1) {
+          constArray.push([mainBookContainer, liObj2, 'grid_book_last', null, `book${count + 1}`]);
+          constArray.push([liObj2, titleObj2, 'grid_book_title_last', tempObj.nextNode.title]);
+          constArray.push([liObj2, authorObj2, 'grid_book_author_last', tempObj.nextNode.author]);
+          constArray.push([liObj2, removeBtn2, 'grid_remove_btn_last', 'Remove', `remove_${count}`]);
+        } else {
+          constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
+          constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
+          constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
+          constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
+        }
+      } else {
+        constArray.push([mainBookContainer, liObj2, 'grid_book', null, `book${count + 1}`]);
+        constArray.push([liObj2, titleObj2, 'grid_book_title', tempObj.nextNode.title]);
+        constArray.push([liObj2, authorObj2, 'grid_book_author', tempObj.nextNode.author]);
+        constArray.push([liObj2, removeBtn2, 'grid_remove_btn', 'Remove', `remove_${count}`]);
+      }
 
       removeBtn2.addEventListener('click', (event) => {
         event.preventDefault();
@@ -167,20 +195,30 @@ function buildHtml() {
 
 formObjButton.addEventListener('click', (event) => {
   event.preventDefault();
-
-  const nbTitle = formObjTitle.value;
-  const nbAuthor = formObjAuthor.value;
-  booksObj.add(nbTitle, nbAuthor);
-  if (storageAvailable('localStorage')) {
-    localStorage.setItem('booksList', JSON.stringify(booksObj));
+  if (formObjTitle.value !== '' && formObjAuthor.value !== '') {
+    const nbTitle = formObjTitle.value;
+    const nbAuthor = formObjAuthor.value;
+    booksObj.add(nbTitle, nbAuthor);
+    if (storageAvailable('localStorage')) {
+      localStorage.setItem('booksList', JSON.stringify(booksObj));
+    }
+    if (document.getElementById('main_grid_book')) {
+      const removerVar = document.getElementById('main_grid_book');
+      removerVar.remove();
+    }
+    buildHtml(true);
+    formObjTitle.value = '';
+    formObjAuthor.value = '';
   }
-  if (document.getElementById('main_grid_book')) {
-    const removerVar = document.getElementById('main_grid_book');
-    removerVar.remove();
-  }
-  buildHtml();
-  formObjTitle.value = '';
-  formObjAuthor.value = '';
 });
 
-buildHtml();
+buildHtml(false);
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (event2) => {
+    event2.preventDefault();
+    document.querySelector(event2.currentTarget.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
