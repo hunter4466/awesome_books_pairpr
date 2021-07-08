@@ -107,6 +107,10 @@
   margin: 0;
   user-select: none;
 }
+body{
+  width:100vw;
+  overflow-x: hidden;
+}
 
 /* ----------------- navigation bar ---------------------- */
 
@@ -124,9 +128,10 @@
 .nav_title {
   font-family: "Cocogoose3", serif;
   font-size: 20px;
+  margin-right: 60vw;
 }
 
-.add_link {
+.link {
   font-family: "Lato1", serif;
   font-size: 15px;
   user-select: none;
@@ -136,10 +141,20 @@
   transition: ease-in-out 0.3s;
 }
 
-.add_link:hover {
+.link:hover {
   color: rgb(24, 24, 63);
 }
+/* --------------- section handlers ----------------- */
 
+.books_section{
+
+}
+.add_section{
+  
+}
+.contact_section{
+  
+}
 /* ----------------- books section ---------------------- */
 .main_title {
   color: rgb(105, 105, 105);
@@ -301,3 +316,10 @@
   margin: 40px auto;
   width: 300px;
 }
+.v_line_separator {
+  border:none;
+  border-left: 1px solid #eee;
+  height: 25px;
+  width: 2px;
+}
+/* ----------------- books section ---------------------- */

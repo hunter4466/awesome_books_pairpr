@@ -10,18 +10,29 @@
 <body>
     <nav class="header">
         <h3 class="nav_title">Awesome Books</h3>
-        <a class="add_link" href="#book_title">Add</a>
+        <a id="books_link" class="link" href="#book_title">List</a>
+        <hr class="v_line_separator">      
+        <a id="add_link" class="link" href="#book_title">Add</a>
+        <hr class="v_line_separator">
+        <a id="contact_link" class="link" href="#book_title">Contact</a>
     </nav>
-    <section id="books_list" class="books_list">
-        <h2 class="main_title">All Awesome Books</h2>
+    <section id="books_section" class="books_section">
+        <div id="books_list" class="books_list">
+            <h2 class="main_title">All Awesome Books</h2>
+        </div>  
+        <hr class="line_separator">
     </section>
-    <hr class="line_separator">
-    <form class="books_form">
-        <h3 class="form_title">Add a new book</h3>
-        <input class="book_title" id="book_title" type="text" placeholder="Title">
-        <input class="book_author" id="book_author" type="text" placeholder="Author">
-        <button class="add_button" id="add_button" type="button">Add</button>
-    </form>
+    <section id="add_section" class="add_section">
+        <form class="books_form">
+            <h3 class="form_title">Add a new book</h3>
+            <input class="book_title" id="book_title" type="text" placeholder="Title">
+            <input class="book_author" id="book_author" type="text" placeholder="Author">
+            <button class="add_button" id="add_button" type="button">Add</button>
+        </form>
+    </section>
+    <section id="contact_section" class="contact_section">
+
+    </section>
     <script src="Assets/Javascript/index.js"></script>
 </body>
 </html>
