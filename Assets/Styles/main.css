@@ -358,8 +358,10 @@ body{
   text-align: center;
 }
 
-.channels li {
+.channels li,
+.contact-text {
   margin: 10px 0;
+  font-family: "Lato5";
 }
 
 #notice {
