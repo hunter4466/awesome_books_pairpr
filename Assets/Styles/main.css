@@ -107,8 +107,9 @@
   margin: 0;
   user-select: none;
 }
-body{
-  width:100vw;
+
+body {
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -144,46 +145,56 @@ body{
 .link:hover {
   color: rgb(24, 24, 63);
 }
+
 /* --------------- section handlers ----------------- */
-.sec_1{
-    position:absolute;
-    width:100%;
-    left: 0vw;
+.sec_1 {
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
-.sec_2{
-    display: none;
-    position:absolute;
-    width:100%;
-    left: 0vw;
+
+.sec_2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
-.sec_3{
-    display: none;
-    position:absolute;
-    width:100%;
-    left: 0vw;
+
+.sec_3 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
-@keyframes section_show_anim{
- 0%{
+
+@keyframes section_show_anim {
+  0% {
     left: -150vw;
- }
- 50%{
+  }
+
+  50% {
     left: -150vw;
- }
- 100%{
-    left: 0vw;
- }
+  }
+
+  100% {
+    left: 0;
+  }
 }
-@keyframes section_close_anim{
-    0%{
-       left: 0vw;
-    }
-    50%{
-        left: -150vw;
-    }
-    100%{
-        left: -150vw;
-    }
-   }
+
+@keyframes section_close_anim {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: -150vw;
+  }
+
+  100% {
+    left: -150vw;
+  }
+}
+
 /* ----------------- books section ---------------------- */
 .main_title {
   color: rgb(105, 105, 105);
@@ -346,12 +357,14 @@ body{
   margin: 40px auto;
   width: 300px;
 }
+
 .v_line_separator {
-  border:none;
+  border: none;
   border-left: 1px solid #eee;
   height: 25px;
   width: 2px;
 }
+
 /* ----------------- books section ---------------------- */
 
 .contact-info {
@@ -361,14 +374,20 @@ body{
 .channels li,
 .contact-text {
   margin: 10px 0;
-  font-family: "Lato5";
+  font-family: "Lato5", serif;
 }
 
 #notice {
   color: red;
   font-size: 13px;
-  font-family: "Lato1", serif ;
+  font-family: "Lato1", serif;
   padding: 10px;
+}
+
+#date-time {
+  padding: 10px 20px;
+  text-align: right;
+  font-family: 'Lato4', serif;
 }
 
 #footer {

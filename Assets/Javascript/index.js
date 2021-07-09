@@ -1,15 +1,20 @@
+import { DateTime } from './luxon.js';
+
+const dt = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+document.getElementById('date-time').innerHTML = dt;
+
 const formObjTitle = document.getElementById('book_title');
 const formObjAuthor = document.getElementById('book_author');
 const formObjButton = document.getElementById('add_button');
-const booksListUl = document.getElementById('books_list')
-const navigationArray = [[],[]];
+const booksListUl = document.getElementById('books_list');
+const navigationArray = [[], []];
 const notice = document.getElementById('notice');
-navigationArray[0].push(document.getElementById('link1'))
-navigationArray[0].push(document.getElementById('link2'))
-navigationArray[0].push(document.getElementById('link3'))
-navigationArray[1].push(document.getElementById('sec_1'))
-navigationArray[1].push(document.getElementById('sec_2'))
-navigationArray[1].push(document.getElementById('sec_3'))
+navigationArray[0].push(document.getElementById('link1'));
+navigationArray[0].push(document.getElementById('link2'));
+navigationArray[0].push(document.getElementById('link3'));
+navigationArray[1].push(document.getElementById('sec_1'));
+navigationArray[1].push(document.getElementById('sec_2'));
+navigationArray[1].push(document.getElementById('sec_3'));
 
 function create(obj) { return document.createElement(obj); }
 function constructor(obj) {
@@ -201,6 +206,12 @@ function buildHtml(addActive) {
   constructor(constArray);
 }
 
+function timer(notice) {
+  setTimeout(() => {
+    notice.innerHTML = '';
+  }, 2000);
+}
+
 formObjButton.addEventListener('click', (event) => {
   event.preventDefault();
   if (formObjTitle.value !== '' && formObjAuthor.value !== '') {
@@ -214,45 +225,28 @@ formObjButton.addEventListener('click', (event) => {
       const removerVar = document.getElementById('main_grid_book');
       removerVar.remove();
     }
-    notice.innerHTML = "Added a new book"
-    notice.style = 'color: green;'
+    notice.innerHTML = 'Added a new book';
+    notice.style = 'color: green;';
     timer(notice);
     buildHtml(true);
     formObjTitle.value = '';
     formObjAuthor.value = '';
   } else {
-    notice.innerHTML = "Field(s) cannot be blank";
-    timer(notice)
+    notice.innerHTML = 'Field(s) cannot be blank';
+    timer(notice);
   }
 });
 
-function timer(notice){
-  setTimeout(()=> {
-    notice.innerHTML = ''
-   }, 2000);
-}
-
 buildHtml(false);
-onLoadMain = true
-console.log(navigationArray)
-for(let i = 0;i<navigationArray[0].length;i += 1){
-  navigationArray[0][i].addEventListener('click',(event)=>{
+for (let i = 0; i < navigationArray[0].length; i += 1) {
+  navigationArray[0][i].addEventListener('click', (event) => {
     event.preventDefault();
-    for(let x = 0;x <navigationArray[1].length; x += 1){
-      if(i == x){
-        navigationArray[1][x].style = "animation-name: section_show_anim; animation-duration: 0.7s; display: inline;"
-      }else{
-        navigationArray[1][x].style = "animation-name: section_close_anim; animation-duration: 0.7s; left: -100vw; display: inline;"
+    for (let x = 0; x < navigationArray[1].length; x += 1) {
+      if (i === x) {
+        navigationArray[1][x].style = 'animation-name: section_show_anim; animation-duration: 0.7s; display: inline;';
+      } else {
+        navigationArray[1][x].style = 'animation-name: section_close_anim; animation-duration: 0.7s; left: -100vw; display: inline;';
       }
     }
-
-  })
-
+  });
 }
-
-
-
-
-
-
-
