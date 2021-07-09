@@ -10,18 +10,61 @@
 <body>
     <nav class="header">
         <h3 class="nav_title">Awesome Books</h3>
-        <a class="add_link" href="#book_title">Add</a>
+        <a id="link1" class="link" href="#">List</a>
+        <hr class="v_line_separator">      
+        <a id="link2" class="link" href="#">Add</a>
+        <hr class="v_line_separator">
+        <a id="link3" class="link" href="#">Contact</a>
     </nav>
-    <section id="books_list" class="books_list">
-        <h2 class="main_title">All Awesome Books</h2>
+    <div id="date-time"></div>
+    <section id="sec_1" class="sec_1">
+        <div id="books_list" class="books_list">
+            <h2 class="main_title">All Awesome Books</h2>
+        </div>  
+        <hr class="line_separator">
     </section>
-    <hr class="line_separator">
-    <form class="books_form">
-        <h3 class="form_title">Add a new book</h3>
-        <input class="book_title" id="book_title" type="text" placeholder="Title">
-        <input class="book_author" id="book_author" type="text" placeholder="Author">
-        <button class="add_button" id="add_button" type="button">Add</button>
-    </form>
-    <script src="Assets/Javascript/index.js"></script>
+    <section id="sec_2" class="sec_2">
+        <form class="books_form">
+            <h3 class="form_title">Add a new book</h3>
+            <input class="book_title" id="book_title" type="text" placeholder="Title">
+            <input class="book_author" id="book_author" type="text" placeholder="Author">
+            <p id="notice"></p>
+            <button class="add_button" id="add_button" type="button">Add</button>
+        </form>
+    </section>
+    <section id="sec_3" class="sec_3">
+        <h2 class="main_title">Contact section</h2>
+        <div class="contact-info">
+            <p class="contact-text">For further inquiries, you can reach out to us!</p>
+            <ul class="channels">
+                <li>
+                    <p>Authors:</p>
+                    <ul>
+                        <li>Mario</li>
+                        <li>Francis</li>
+                        <li>Shabbir</li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Tel:</p>
+                    <ul>
+                        <li>+123000000000000000</li>
+                        <li>+456000000000000000</li>
+                        <li>+789000000000000000</li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Address:</p>
+                    <p>Microverse.org</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer id='footer'>
+        <p class="copy">Copyright &copy; 2021</p>
+    </footer>
+
+    <script type="module" src="./Assets/Javascript/index.js"></script>
+    <script src="./Assets/Javascript/luxon.js"></script>
 </body>
 </html>

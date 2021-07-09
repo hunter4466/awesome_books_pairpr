@@ -108,6 +108,11 @@
   user-select: none;
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 /* ----------------- navigation bar ---------------------- */
 
 .header {
@@ -124,9 +129,10 @@
 .nav_title {
   font-family: "Cocogoose3", serif;
   font-size: 20px;
+  margin-right: 60vw;
 }
 
-.add_link {
+.link {
   font-family: "Lato1", serif;
   font-size: 15px;
   user-select: none;
@@ -136,8 +142,57 @@
   transition: ease-in-out 0.3s;
 }
 
-.add_link:hover {
+.link:hover {
   color: rgb(24, 24, 63);
+}
+
+/* --------------- section handlers ----------------- */
+.sec_1 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.sec_2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.sec_3 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+@keyframes section_show_anim {
+  0% {
+    left: -150vw;
+  }
+
+  50% {
+    left: -150vw;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes section_close_anim {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: -150vw;
+  }
+
+  100% {
+    left: -150vw;
+  }
 }
 
 /* ----------------- books section ---------------------- */
@@ -155,6 +210,7 @@
   font-size: 15px;
 }
 
+.contact-info,
 .books_form,
 .main_grid_book {
   width: 50%;
@@ -300,4 +356,45 @@
   border: 1px solid #eee;
   margin: 40px auto;
   width: 300px;
+}
+
+.v_line_separator {
+  border: none;
+  border-left: 1px solid #eee;
+  height: 25px;
+  width: 2px;
+}
+
+/* ----------------- books section ---------------------- */
+
+.contact-info {
+  text-align: center;
+}
+
+.channels li,
+.contact-text {
+  margin: 10px 0;
+  font-family: "Lato5", serif;
+}
+
+#notice {
+  color: red;
+  font-size: 13px;
+  font-family: "Lato1", serif;
+  padding: 10px;
+}
+
+#date-time {
+  padding: 10px 20px;
+  text-align: right;
+  font-family: 'Lato4', serif;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  padding: 20px 10px;
+  color: #333;
 }
